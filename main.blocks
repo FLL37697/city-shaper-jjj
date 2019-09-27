@@ -1,0 +1,14 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <variables></variables>
+  <block type="pxt-on-start" x="0" y="0">
+    <statement name="HANDLER">
+      <block type="console_log">
+        <value name="text">
+          <shadow type="text">
+            <field name="TEXT">hello</field>
+          </shadow>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
