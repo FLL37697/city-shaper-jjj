@@ -3,31 +3,13 @@ let currentTime = 0
 let motoraAdjustment = 0
 let loopStart = 0
 let lastArmPos = 0
-function armDown() {
-    motors.mediumA.run(-20, 100, MoveUnit.MilliSeconds)
-    lastArmPos = motors.mediumA.angle()
-    brick.showValue("lastArmPosInit", lastArmPos, 4)
-    pause(200)
-    while (true) {
-        motors.mediumA.run(-20, 10, MoveUnit.MilliSeconds)
-        armPos = motors.mediumA.angle()
-        brick.showValue("lastArmPos", lastArmPos, 1)
-        brick.showValue("armPos", armPos, 2)
-        brick.showValue("Difference", armPos - lastArmPos, 3)
-        if (lastArmPos - armPos == 0) {
-            music.playSoundEffect(sounds.communicationBravo)
-            break;
-        }
-        lastArmPos = armPos
-    }
-}
 function armUp() {
-    motors.mediumA.run(20, 100, MoveUnit.MilliSeconds)
+    motors.mediumA.run(30, 100, MoveUnit.MilliSeconds)
     lastArmPos = motors.mediumA.angle()
     brick.showValue("lastArmPosInit", lastArmPos, 4)
     pause(200)
     while (true) {
-        motors.mediumA.run(20, 10, MoveUnit.MilliSeconds)
+        motors.mediumA.run(30, 40, MoveUnit.MilliSeconds)
         armPos = motors.mediumA.angle()
         brick.showValue("lastArmPos", lastArmPos, 1)
         brick.showValue("armPos", armPos, 2)
@@ -61,12 +43,35 @@ function program1() {
 }
 function test() {
     armUp()
-    motors.largeBC.steer(0, 50, 2.5, MoveUnit.Rotations)
-    motors.largeBC.tank(25, -25, 0.25, MoveUnit.Rotations)
-    motors.largeBC.steer(0, 50, 1, MoveUnit.Rotations)
-    motors.largeBC.tank(-25, 25, 0.22, MoveUnit.Rotations)
-    motors.largeBC.steer(0, 40, 0.35, MoveUnit.Rotations)
+    motors.largeBC.steer(0, 40, 2.5, MoveUnit.Rotations)
+    motors.largeBC.tank(10, -10, 0.25, MoveUnit.Rotations)
+    motors.largeBC.steer(0, 50, 0.75, MoveUnit.Rotations)
+    motors.largeBC.tank(-10, 10, 0.25, MoveUnit.Rotations)
+    motors.largeBC.steer(0, 40, 0.425, MoveUnit.Rotations)
     armDown()
+    motors.largeBC.steer(0, -35, 0.45, MoveUnit.Rotations)
+    motors.largeBC.tank(-10, 10, 0.1, MoveUnit.Rotations)
+    armDown()
+    motors.largeBC.steer(0, 40, 0.3, MoveUnit.Rotations)
+    armUp()
+}
+function armDown() {
+    motors.mediumA.run(-20, 100, MoveUnit.MilliSeconds)
+    lastArmPos = motors.mediumA.angle()
+    brick.showValue("lastArmPosInit", lastArmPos, 4)
+    pause(200)
+    while (true) {
+        motors.mediumA.run(-20, 40, MoveUnit.MilliSeconds)
+        armPos = motors.mediumA.angle()
+        brick.showValue("lastArmPos", lastArmPos, 1)
+        brick.showValue("armPos", armPos, 2)
+        brick.showValue("Difference", armPos - lastArmPos, 3)
+        if (lastArmPos - armPos == 0) {
+            music.playSoundEffect(sounds.communicationBravo)
+            break;
+        }
+        lastArmPos = armPos
+    }
 }
 brick.buttonLeft.onEvent(ButtonEvent.Released, function () {
     armUp()
