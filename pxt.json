@@ -3,7 +3,8 @@
     "version": "0.0.0",
     "description": "",
     "dependencies": {
-        "ev3": "*"
+        "ev3": "*",
+        "fll-radiactive-brainstorm": "workspace:6d188ea1-71ca-42f2-3143-64043da3dff3"
     },
     "files": [
         "README.md",

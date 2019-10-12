@@ -3,78 +3,30 @@ let currentTime = 0
 let motoraAdjustment = 0
 let loopStart = 0
 let lastArmPos = 0
-function armUp() {
-    motors.mediumA.run(30, 100, MoveUnit.MilliSeconds)
-    lastArmPos = motors.mediumA.angle()
-    brick.showValue("lastArmPosInit", lastArmPos, 4)
-    pause(200)
-    while (true) {
-        motors.mediumA.run(30, 40, MoveUnit.MilliSeconds)
-        armPos = motors.mediumA.angle()
-        brick.showValue("lastArmPos", lastArmPos, 1)
-        brick.showValue("armPos", armPos, 2)
-        brick.showValue("Difference", armPos - lastArmPos, 3)
-        if (lastArmPos - armPos == 0) {
-            music.playSoundEffect(sounds.communicationBravo)
-            break;
-        }
-        lastArmPos = armPos
-    }
-}
-brick.buttonRight.onEvent(ButtonEvent.Released, function () {
-    armDown()
+radioactiveBrainstorm.addMenuItem("Crane Mission", function () {
+    crane()
 })
-function program1() {
-    motors.largeBC.steer(0, 50, 2.25, MoveUnit.Rotations)
-    loopStart = control.millis()
-    while (currentTime - loopStart < 1550) {
-        motoraAdjustment = sensors.color1.light(LightIntensityMode.Reflected) - 40
-        motors.largeBC.steer(motoraAdjustment, 25)
-        currentTime = control.millis()
-        console.log("Loop time")
-        console.log("" + (currentTime - loopStart))
-    }
-    motors.largeBC.stop()
-    motors.largeBC.steer(0, 15, 0.25, MoveUnit.Rotations)
-    armDown()
-    pause(2000)
-    armUp()
-    motors.largeBC.steer(0, -100, 3.5, MoveUnit.Rotations)
-}
-function test() {
-    armUp()
-    motors.largeBC.steer(0, 40, 2.5, MoveUnit.Rotations)
+function crane() {
+    motors.resetAll()
+    radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 40, 100, false)
+motors.largeBC.steer(0, 40, 2.5, MoveUnit.Rotations)
     motors.largeBC.tank(10, -10, 0.25, MoveUnit.Rotations)
     motors.largeBC.steer(0, 50, 0.75, MoveUnit.Rotations)
     motors.largeBC.tank(-10, 10, 0.25, MoveUnit.Rotations)
-    motors.largeBC.steer(0, 40, 0.425, MoveUnit.Rotations)
-    armDown()
-    motors.largeBC.steer(0, -35, 0.45, MoveUnit.Rotations)
-    motors.largeBC.tank(-10, 10, 0.1, MoveUnit.Rotations)
-    armDown()
-    motors.largeBC.steer(0, 40, 0.3, MoveUnit.Rotations)
-    armUp()
+    motors.largeBC.steer(0, 40, 0.45, MoveUnit.Rotations)
+    control.runInParallel(function () {
+        motors.mediumA.run(60, 5000, MoveUnit.MilliSeconds)
+        motors.largeBC.steer(0, -35, 0.45, MoveUnit.Rotations)
+    })
+    motors.mediumA.stop()
+    motors.largeBC.tank(-10, 10, 0.2, MoveUnit.Rotations)
+    radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.DOWN, 30, 40, 100, false)
+motors.largeBC.steer(0, 40, 0.35, MoveUnit.Rotations)
+    radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 40, 100, false)
+radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 40, 100, false)
 }
-function armDown() {
-    motors.mediumA.run(-20, 100, MoveUnit.MilliSeconds)
-    lastArmPos = motors.mediumA.angle()
-    brick.showValue("lastArmPosInit", lastArmPos, 4)
-    pause(200)
-    while (true) {
-        motors.mediumA.run(-20, 40, MoveUnit.MilliSeconds)
-        armPos = motors.mediumA.angle()
-        brick.showValue("lastArmPos", lastArmPos, 1)
-        brick.showValue("armPos", armPos, 2)
-        brick.showValue("Difference", armPos - lastArmPos, 3)
-        if (lastArmPos - armPos == 0) {
-            music.playSoundEffect(sounds.communicationBravo)
-            break;
-        }
-        lastArmPos = armPos
-    }
-}
-brick.buttonLeft.onEvent(ButtonEvent.Released, function () {
-    armUp()
-})
-// program1()
-test()
+lastArmPos = 0
+loopStart = 0
+motoraAdjustment = 0
+currentTime = 0
+armPos = 0
