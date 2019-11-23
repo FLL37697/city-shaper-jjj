@@ -1,15 +1,242 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="dOYi]=hoJZ+Ar60fAhrf">lastArmPos</variable>
-    <variable type="" id="@S.xfGYWxTX=~ylknG:;">loopStart</variable>
-    <variable type="" id="_V?GItEJ9vw?Px?zhu1F">motoraAdjustment</variable>
-    <variable type="" id=",iMlzX03mj~[X9+{iE)s">currentTime</variable>
-    <variable type="" id="YnieHjMUNcqHXt](zW3f">armPos</variable>
+    <variable type="" id="rb*W4NkkuIH5g7!*7yKT">lastArmPos</variable>
+    <variable type="" id="#qj`c)bh$ggPk*;Hjr.c">loopStart</variable>
+    <variable type="" id="[%AD_,!tjf?$lyhHlm2v">motoraAdjustment</variable>
+    <variable type="" id="Lez%r3N|=8G*|KZFDoWQ">currentTime</variable>
+    <variable type="" id="+E48AGl@,fSjl#Y0uQZ)">armPos</variable>
   </variables>
-  <block type="pxt-on-start" x="0" y="0">
+  <block type="procedures_defnoreturn" x="1534" y="-371">
+    <field name="NAME">mission12Jonas1</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorResetAll">
+        <next>
+          <block type="motorPairSteer">
+            <mutation _expanded="2" _input_init="true"></mutation>
+            <field name="chassis">motors.largeBC</field>
+            <field name="unit">MoveUnit.Rotations</field>
+            <value name="turnRatio">
+              <shadow type="motorTurnRatioPicker"></shadow>
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="speed">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">33</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="motorStopAll">
+                <next>
+                  <block type="device_pause">
+                    <value name="pause">
+                      <shadow type="timePicker">
+                        <field name="ms">1000</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="motorPairSteer">
+                        <mutation _expanded="2" _input_init="true"></mutation>
+                        <field name="chassis">motors.largeBC</field>
+                        <field name="unit">MoveUnit.Rotations</field>
+                        <value name="turnRatio">
+                          <shadow type="motorTurnRatioPicker"></shadow>
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="speed">
+                          <shadow type="motorSpeedPicker">
+                            <field name="speed">-39</field>
+                          </shadow>
+                        </value>
+                        <value name="value">
+                          <shadow type="math_number">
+                            <field name="NUM">2</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="-161" y="-173">
+    <field name="NAME">mission12Jonas2</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorPairSteer">
+        <mutation _expanded="2" _input_init="true"></mutation>
+        <field name="chassis">motors.largeBC</field>
+        <field name="unit">MoveUnit.Rotations</field>
+        <value name="turnRatio">
+          <shadow type="motorTurnRatioPicker"></shadow>
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="speed">
+          <shadow type="motorSpeedPicker">
+            <field name="speed">33</field>
+          </shadow>
+        </value>
+        <value name="value">
+          <shadow type="math_number">
+            <field name="NUM">2.6</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="motorPairSteer">
+            <mutation _expanded="2" _input_init="true"></mutation>
+            <field name="chassis">motors.largeBC</field>
+            <field name="unit">MoveUnit.Rotations</field>
+            <value name="turnRatio">
+              <shadow type="motorTurnRatioPicker"></shadow>
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="speed">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">29</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="motorStopAll">
+                <next>
+                  <block type="device_pause">
+                    <value name="pause">
+                      <shadow type="timePicker">
+                        <field name="ms">1000</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="motorPairSteer">
+                        <mutation _expanded="2" _input_init="true"></mutation>
+                        <field name="chassis">motors.largeBC</field>
+                        <field name="unit">MoveUnit.Rotations</field>
+                        <value name="turnRatio">
+                          <shadow type="motorTurnRatioPicker"></shadow>
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="speed">
+                          <shadow type="motorSpeedPicker">
+                            <field name="speed">-39</field>
+                          </shadow>
+                        </value>
+                        <value name="value">
+                          <shadow type="math_number">
+                            <field name="NUM">3.5</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="872" y="20">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission12 Jonas1</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission12Jonas1"></mutation>
+        <field name="NAME">mission12Jonas1</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="1351" y="20">
+    <field name="NAME">mission12</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorResetAll">
+        <next>
+          <block type="motorPairSteer">
+            <mutation _expanded="2" _input_init="true"></mutation>
+            <field name="chassis">motors.largeBC</field>
+            <field name="unit">MoveUnit.Rotations</field>
+            <value name="turnRatio">
+              <shadow type="motorTurnRatioPicker"></shadow>
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="speed">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">25</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">3</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="motorStopAll">
+                <next>
+                  <block type="motorPairSteer">
+                    <mutation _expanded="2" _input_init="true"></mutation>
+                    <field name="chassis">motors.largeBC</field>
+                    <field name="unit">MoveUnit.Rotations</field>
+                    <value name="turnRatio">
+                      <shadow type="motorTurnRatioPicker"></shadow>
+                      <block type="math_number">
+                        <field name="NUM">0</field>
+                      </block>
+                    </value>
+                    <value name="speed">
+                      <shadow type="motorSpeedPicker">
+                        <field name="speed">-25</field>
+                      </shadow>
+                    </value>
+                    <value name="value">
+                      <shadow type="math_number">
+                        <field name="NUM">3</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="motorStopAll"></block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="pxt-on-start" x="-162" y="217">
     <statement name="HANDLER">
       <block type="variables_set">
-        <field name="VAR" id="dOYi]=hoJZ+Ar60fAhrf" variabletype="">lastArmPos</field>
+        <field name="VAR" id="rb*W4NkkuIH5g7!*7yKT" variabletype="">lastArmPos</field>
         <value name="VALUE">
           <shadow type="math_number">
             <field name="NUM">0</field>
@@ -17,7 +244,7 @@
         </value>
         <next>
           <block type="variables_set">
-            <field name="VAR" id="@S.xfGYWxTX=~ylknG:;" variabletype="">loopStart</field>
+            <field name="VAR" id="#qj`c)bh$ggPk*;Hjr.c" variabletype="">loopStart</field>
             <value name="VALUE">
               <shadow type="math_number">
                 <field name="NUM">0</field>
@@ -25,7 +252,7 @@
             </value>
             <next>
               <block type="variables_set">
-                <field name="VAR" id="_V?GItEJ9vw?Px?zhu1F" variabletype="">motoraAdjustment</field>
+                <field name="VAR" id="[%AD_,!tjf?$lyhHlm2v" variabletype="">motoraAdjustment</field>
                 <value name="VALUE">
                   <shadow type="math_number">
                     <field name="NUM">0</field>
@@ -33,7 +260,7 @@
                 </value>
                 <next>
                   <block type="variables_set">
-                    <field name="VAR" id=",iMlzX03mj~[X9+{iE)s" variabletype="">currentTime</field>
+                    <field name="VAR" id="Lez%r3N|=8G*|KZFDoWQ" variabletype="">currentTime</field>
                     <value name="VALUE">
                       <shadow type="math_number">
                         <field name="NUM">0</field>
@@ -41,7 +268,7 @@
                     </value>
                     <next>
                       <block type="variables_set">
-                        <field name="VAR" id="YnieHjMUNcqHXt](zW3f" variabletype="">armPos</field>
+                        <field name="VAR" id="+E48AGl@,fSjl#Y0uQZ)" variabletype="">armPos</field>
                         <value name="VALUE">
                           <shadow type="math_number">
                             <field name="NUM">0</field>
@@ -58,7 +285,20 @@
       </block>
     </statement>
   </block>
-  <block type="add_menu_item" x="373" y="0">
+  <block type="add_menu_item" x="417" y="323">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission12 Jonas2</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission12Jonas2"></mutation>
+        <field name="NAME">mission12Jonas2</field>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="801" y="385">
     <value name="label">
       <shadow type="text">
         <field name="TEXT">Crane Mission</field>
@@ -71,7 +311,20 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" x="811" y="0">
+  <block type="add_menu_item" x="1239" y="385">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission12</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission12"></mutation>
+        <field name="NAME">mission12</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="1643" y="385">
     <field name="NAME">crane</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
@@ -93,7 +346,7 @@
                 </value>
                 <value name="speed">
                   <shadow type="motorSpeedPicker">
-                    <field name="speed">40</field>
+                    <field name="speed">25</field>
                   </shadow>
                 </value>
                 <value name="value">
@@ -134,7 +387,7 @@
                         </value>
                         <value name="speed">
                           <shadow type="motorSpeedPicker">
-                            <field name="speed">50</field>
+                            <field name="speed">25</field>
                           </shadow>
                         </value>
                         <value name="value">
@@ -163,208 +416,167 @@
                               </shadow>
                             </value>
                             <next>
-                              <block type="motorPairSteer">
+                              <block type="motorRun">
                                 <mutation _expanded="2" _input_init="true"></mutation>
-                                <field name="chassis">motors.largeBC</field>
+                                <field name="motor">motors.mediumA</field>
                                 <field name="unit">MoveUnit.Rotations</field>
-                                <value name="turnRatio">
-                                  <shadow type="motorTurnRatioPicker"></shadow>
-                                  <block type="math_number">
-                                    <field name="NUM">0</field>
-                                  </block>
-                                </value>
                                 <value name="speed">
                                   <shadow type="motorSpeedPicker">
-                                    <field name="speed">40</field>
+                                    <field name="speed">50</field>
                                   </shadow>
                                 </value>
                                 <value name="value">
                                   <shadow type="math_number">
-                                    <field name="NUM">0.45</field>
+                                    <field name="NUM">0.5</field>
                                   </shadow>
                                 </value>
                                 <next>
-                                  <block type="move_until_stall">
-                                    <field name="motor">motors.mediumA</field>
-                                    <field name="direction">radioactiveBrainstorm.Direction.DOWN</field>
-                                    <value name="power">
-                                      <shadow type="math_number_minmax">
-                                        <mutation min="1" max="100" label="Power"></mutation>
-                                        <field name="SLIDER">20</field>
+                                  <block type="motorPairSteer">
+                                    <mutation _expanded="2" _input_init="true"></mutation>
+                                    <field name="chassis">motors.largeBC</field>
+                                    <field name="unit">MoveUnit.Rotations</field>
+                                    <value name="turnRatio">
+                                      <shadow type="motorTurnRatioPicker"></shadow>
+                                      <block type="math_number">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <value name="speed">
+                                      <shadow type="motorSpeedPicker">
+                                        <field name="speed">40</field>
                                       </shadow>
                                     </value>
-                                    <value name="increment">
+                                    <value name="value">
                                       <shadow type="math_number">
-                                        <field name="NUM">10</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="startOffset">
-                                      <shadow type="math_number">
-                                        <field name="NUM">100</field>
-                                      </shadow>
-                                    </value>
-                                    <value name="debug">
-                                      <shadow type="logic_boolean">
-                                        <field name="BOOL">TRUE</field>
+                                        <field name="NUM">0.5</field>
                                       </shadow>
                                     </value>
                                     <next>
-                                      <block type="motorPairSteer">
-                                        <mutation _expanded="2" _input_init="true"></mutation>
-                                        <field name="chassis">motors.largeBC</field>
-                                        <field name="unit">MoveUnit.Rotations</field>
-                                        <value name="turnRatio">
-                                          <shadow type="motorTurnRatioPicker">
-                                            <field name="turnratio">0</field>
-                                          </shadow>
-                                        </value>
-                                        <value name="speed">
-                                          <shadow type="motorSpeedPicker">
-                                            <field name="speed">-40</field>
-                                          </shadow>
-                                        </value>
-                                        <value name="value">
-                                          <shadow type="math_number">
-                                            <field name="NUM">0.45</field>
+                                      <block type="device_pause">
+                                        <value name="pause">
+                                          <shadow type="timePicker">
+                                            <field name="ms">200</field>
                                           </shadow>
                                         </value>
                                         <next>
-                                          <block type="move_until_stall">
-                                            <field name="motor">motors.mediumA</field>
-                                            <field name="direction">radioactiveBrainstorm.Direction.DOWN</field>
-                                            <value name="power">
-                                              <shadow type="math_number_minmax">
-                                                <mutation min="1" max="100" label="Power"></mutation>
-                                                <field name="SLIDER">20</field>
+                                          <block type="motorPairSteer">
+                                            <mutation _expanded="2" _input_init="true"></mutation>
+                                            <field name="chassis">motors.largeBC</field>
+                                            <field name="unit">MoveUnit.Rotations</field>
+                                            <value name="turnRatio">
+                                              <shadow type="motorTurnRatioPicker"></shadow>
+                                              <block type="math_number">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <value name="speed">
+                                              <shadow type="motorSpeedPicker">
+                                                <field name="speed">-25</field>
                                               </shadow>
                                             </value>
-                                            <value name="increment">
+                                            <value name="value">
                                               <shadow type="math_number">
-                                                <field name="NUM">10</field>
-                                              </shadow>
-                                            </value>
-                                            <value name="startOffset">
-                                              <shadow type="math_number">
-                                                <field name="NUM">100</field>
-                                              </shadow>
-                                            </value>
-                                            <value name="debug">
-                                              <shadow type="logic_boolean">
-                                                <field name="BOOL">TRUE</field>
+                                                <field name="NUM">0.45</field>
                                               </shadow>
                                             </value>
                                             <next>
-                                              <block type="motorPairTank">
+                                              <block type="motorRun">
                                                 <mutation _expanded="2" _input_init="true"></mutation>
-                                                <field name="motors">motors.largeBC</field>
+                                                <field name="motor">motors.mediumA</field>
                                                 <field name="unit">MoveUnit.Rotations</field>
-                                                <value name="speedLeft">
+                                                <value name="speed">
                                                   <shadow type="motorSpeedPicker">
-                                                    <field name="speed">-10</field>
-                                                  </shadow>
-                                                </value>
-                                                <value name="speedRight">
-                                                  <shadow type="motorSpeedPicker">
-                                                    <field name="speed">10</field>
+                                                    <field name="speed">50</field>
                                                   </shadow>
                                                 </value>
                                                 <value name="value">
                                                   <shadow type="math_number">
-                                                    <field name="NUM">0.2</field>
+                                                    <field name="NUM">0</field>
                                                   </shadow>
                                                 </value>
                                                 <next>
-                                                  <block type="motorPairSteer">
+                                                  <block type="motorPairTank">
                                                     <mutation _expanded="2" _input_init="true"></mutation>
-                                                    <field name="chassis">motors.largeBC</field>
+                                                    <field name="motors">motors.largeBC</field>
                                                     <field name="unit">MoveUnit.Rotations</field>
-                                                    <value name="turnRatio">
-                                                      <shadow type="motorTurnRatioPicker">
-                                                        <field name="turnratio">38</field>
+                                                    <value name="speedLeft">
+                                                      <shadow type="motorSpeedPicker">
+                                                        <field name="speed">-10</field>
                                                       </shadow>
                                                     </value>
-                                                    <value name="speed">
+                                                    <value name="speedRight">
                                                       <shadow type="motorSpeedPicker">
-                                                        <field name="speed">20</field>
+                                                        <field name="speed">10</field>
                                                       </shadow>
                                                     </value>
                                                     <value name="value">
                                                       <shadow type="math_number">
-                                                        <field name="NUM">0.6</field>
+                                                        <field name="NUM">0.5</field>
                                                       </shadow>
                                                     </value>
                                                     <next>
-                                                      <block type="motorResetAll">
+                                                      <block type="motorPairSteer">
+                                                        <mutation _expanded="2" _input_init="true"></mutation>
+                                                        <field name="chassis">motors.largeBC</field>
+                                                        <field name="unit">MoveUnit.Rotations</field>
+                                                        <value name="turnRatio">
+                                                          <shadow type="motorTurnRatioPicker"></shadow>
+                                                          <block type="math_number">
+                                                            <field name="NUM">38</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="speed">
+                                                          <shadow type="motorSpeedPicker">
+                                                            <field name="speed">20</field>
+                                                          </shadow>
+                                                        </value>
+                                                        <value name="value">
+                                                          <shadow type="math_number">
+                                                            <field name="NUM">0.6</field>
+                                                          </shadow>
+                                                        </value>
                                                         <next>
-                                                          <block type="move_until_stall">
-                                                            <field name="motor">motors.mediumA</field>
-                                                            <field name="direction">radioactiveBrainstorm.Direction.UP</field>
-                                                            <value name="power">
-                                                              <shadow type="math_number_minmax">
-                                                                <mutation min="1" max="100" label="Power"></mutation>
-                                                                <field name="SLIDER">20</field>
-                                                              </shadow>
-                                                            </value>
-                                                            <value name="increment">
-                                                              <shadow type="math_number">
-                                                                <field name="NUM">10</field>
-                                                              </shadow>
-                                                            </value>
-                                                            <value name="startOffset">
-                                                              <shadow type="math_number">
-                                                                <field name="NUM">100</field>
-                                                              </shadow>
-                                                            </value>
-                                                            <value name="debug">
-                                                              <shadow type="logic_boolean">
-                                                                <field name="BOOL">TRUE</field>
-                                                              </shadow>
-                                                            </value>
+                                                          <block type="motorResetAll">
                                                             <next>
-                                                              <block type="move_until_stall">
-                                                                <field name="motor">motors.mediumA</field>
-                                                                <field name="direction">radioactiveBrainstorm.Direction.DOWN</field>
-                                                                <value name="power">
-                                                                  <shadow type="math_number_minmax">
-                                                                    <mutation min="1" max="100" label="Power"></mutation>
-                                                                    <field name="SLIDER">20</field>
-                                                                  </shadow>
-                                                                </value>
-                                                                <value name="increment">
-                                                                  <shadow type="math_number">
-                                                                    <field name="NUM">10</field>
-                                                                  </shadow>
-                                                                </value>
-                                                                <value name="startOffset">
-                                                                  <shadow type="math_number">
-                                                                    <field name="NUM">100</field>
-                                                                  </shadow>
-                                                                </value>
-                                                                <value name="debug">
-                                                                  <shadow type="logic_boolean">
-                                                                    <field name="BOOL">TRUE</field>
-                                                                  </shadow>
-                                                                </value>
+                                                              <block type="typescript_statement" editable="false">
+                                                                <mutation line0="radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 10, 100, true)" numlines="1"></mutation>
+                                                                <field name="LINE0">radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 10, 100, true)</field>
                                                                 <next>
-                                                                  <block type="motorPairSteer">
-                                                                    <mutation _expanded="2" _input_init="true"></mutation>
-                                                                    <field name="chassis">motors.largeBC</field>
-                                                                    <field name="unit">MoveUnit.Rotations</field>
-                                                                    <value name="turnRatio">
-                                                                      <shadow type="motorTurnRatioPicker">
-                                                                        <field name="turnratio">0</field>
+                                                                  <block type="device_pause">
+                                                                    <value name="pause">
+                                                                      <shadow type="timePicker">
+                                                                        <field name="ms">1000</field>
                                                                       </shadow>
                                                                     </value>
-                                                                    <value name="speed">
-                                                                      <shadow type="motorSpeedPicker">
-                                                                        <field name="speed">-50</field>
-                                                                      </shadow>
-                                                                    </value>
-                                                                    <value name="value">
-                                                                      <shadow type="math_number">
-                                                                        <field name="NUM">2</field>
-                                                                      </shadow>
-                                                                    </value>
+                                                                    <next>
+                                                                      <block type="typescript_statement" editable="false">
+                                                                        <mutation line0="radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.DOWN, 20, 10, 100, true)" numlines="1"></mutation>
+                                                                        <field name="LINE0">radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.DOWN, 20, 10, 100, true)</field>
+                                                                        <next>
+                                                                          <block type="motorPairSteer">
+                                                                            <mutation _expanded="2" _input_init="true"></mutation>
+                                                                            <field name="chassis">motors.largeBC</field>
+                                                                            <field name="unit">MoveUnit.Rotations</field>
+                                                                            <value name="turnRatio">
+                                                                              <shadow type="motorTurnRatioPicker"></shadow>
+                                                                              <block type="math_number">
+                                                                                <field name="NUM">0</field>
+                                                                              </block>
+                                                                            </value>
+                                                                            <value name="speed">
+                                                                              <shadow type="motorSpeedPicker">
+                                                                                <field name="speed">-50</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                            <value name="value">
+                                                                              <shadow type="math_number">
+                                                                                <field name="NUM">2</field>
+                                                                              </shadow>
+                                                                            </value>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
                                                                   </block>
                                                                 </next>
                                                               </block>
@@ -397,5 +609,30 @@
         </next>
       </block>
     </statement>
+  </block>
+  <block type="move_until_stall" disabled="true" x="20" y="1374">
+    <field name="motor">motors.mediumA</field>
+    <field name="direction">radioactiveBrainstorm.Direction.DOWN</field>
+    <value name="power">
+      <shadow type="math_number_minmax">
+        <mutation min="1" max="100" label="Power"></mutation>
+        <field name="SLIDER">20</field>
+      </shadow>
+    </value>
+    <value name="increment">
+      <shadow type="math_number">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="startOffset">
+      <shadow type="math_number">
+        <field name="NUM">100</field>
+      </shadow>
+    </value>
+    <value name="debug">
+      <shadow type="logic_boolean">
+        <field name="BOOL">TRUE</field>
+      </shadow>
+    </value>
   </block>
 </xml>
