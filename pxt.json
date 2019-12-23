@@ -9,7 +9,9 @@
     "files": [
         "README.md",
         "main.ts",
-        "main.blocks"
+        "main.blocks",
+        "mission9_safety_factor.ts",
+        "sensor_test.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -1,12 +1,290 @@
 <xml xmlns="http://www.w3.org/1999/xhtml">
   <variables>
-    <variable type="" id="rb*W4NkkuIH5g7!*7yKT">lastArmPos</variable>
-    <variable type="" id="#qj`c)bh$ggPk*;Hjr.c">loopStart</variable>
-    <variable type="" id="[%AD_,!tjf?$lyhHlm2v">motoraAdjustment</variable>
-    <variable type="" id="Lez%r3N|=8G*|KZFDoWQ">currentTime</variable>
-    <variable type="" id="+E48AGl@,fSjl#Y0uQZ)">armPos</variable>
+    <variable type="" id="YguEuLX/dPHH9h~jrP.Z">lastArmPos</variable>
+    <variable type="" id="027S;r{-HCLMBe{4E2jE">loopStart</variable>
+    <variable type="" id="]JgdYggW7j2JQ:istdZS">motoraAdjustment</variable>
+    <variable type="" id="[G!^V+4skiV(p5iymN1o">currentTime</variable>
+    <variable type="" id="@^UFRQqY%G`[(DI/E`70">armPos</variable>
   </variables>
-  <block type="procedures_defnoreturn" x="790" y="0">
+  <block type="pxt-on-start" x="20" y="20">
+    <statement name="HANDLER">
+      <block type="typescript_statement" editable="false">
+        <mutation line0="function test(" line1="    seconds: number = 10," line2="    basePower: number = 10" line3="): void {" line4="    let startTime = control.timer1.millis()" line5="    let error = 0;" line6="" line7="    motors.largeBC.reset();" line8="    motors.largeBC.tank(basePower, basePower);" line9="    while (true) {" line10="        let B = 70;" line11="        let K = .1;" line12="" line13="        let right = sensors.color1.light(LightIntensityMode.Reflected)" line14="        let left = sensors.color2.light(LightIntensityMode.Reflected)" line15="" line16="        brick.showValue(&quot;right&quot;, right, 1)" line17="        brick.showValue(&quot;left&quot;, left, 2)" line18="" line19="        let leftAdjustment = K * (B - left);" line20="        let rightAdjustment = K * (B - right);" line21="        brick.showValue(&quot;rightAdj&quot;, rightAdjustment, 3)" line22="        brick.showValue(&quot;leftAdj&quot;, leftAdjustment, 4)" line23="" line24="        motors.largeBC.tank(basePower + leftAdjustment, basePower + rightAdjustment);" line25="" line26="        pause(100)" line27="" line28="        let now = control.timer1.millis();" line29="        if (now - startTime &gt; seconds * 1000) {" line30="            break;" line31="        }" line32="    }" line33="" line34="    motors.largeBC.stop();" line35="}" numlines="36"></mutation>
+        <field name="LINE0">function test(</field>
+        <field name="LINE1">    seconds: number = 10,</field>
+        <field name="LINE2">    basePower: number = 10</field>
+        <field name="LINE3">): void {</field>
+        <field name="LINE4">    let startTime = control.timer1.millis()</field>
+        <field name="LINE5">    let error = 0;</field>
+        <field name="LINE6"></field>
+        <field name="LINE7">    motors.largeBC.reset();</field>
+        <field name="LINE8">    motors.largeBC.tank(basePower, basePower);</field>
+        <field name="LINE9">    while (true) {</field>
+        <field name="LINE10">        let B = 70;</field>
+        <field name="LINE11">        let K = .1;</field>
+        <field name="LINE12"></field>
+        <field name="LINE13">        let right = sensors.color1.light(LightIntensityMode.Reflected)</field>
+        <field name="LINE14">        let left = sensors.color2.light(LightIntensityMode.Reflected)</field>
+        <field name="LINE15"></field>
+        <field name="LINE16">        brick.showValue("right", right, 1)</field>
+        <field name="LINE17">        brick.showValue("left", left, 2)</field>
+        <field name="LINE18"></field>
+        <field name="LINE19">        let leftAdjustment = K * (B - left);</field>
+        <field name="LINE20">        let rightAdjustment = K * (B - right);</field>
+        <field name="LINE21">        brick.showValue("rightAdj", rightAdjustment, 3)</field>
+        <field name="LINE22">        brick.showValue("leftAdj", leftAdjustment, 4)</field>
+        <field name="LINE23"></field>
+        <field name="LINE24">        motors.largeBC.tank(basePower + leftAdjustment, basePower + rightAdjustment);</field>
+        <field name="LINE25"></field>
+        <field name="LINE26">        pause(100)</field>
+        <field name="LINE27"></field>
+        <field name="LINE28">        let now = control.timer1.millis();</field>
+        <field name="LINE29">        if (now - startTime &gt; seconds * 1000) {</field>
+        <field name="LINE30">            break;</field>
+        <field name="LINE31">        }</field>
+        <field name="LINE32">    }</field>
+        <field name="LINE33"></field>
+        <field name="LINE34">    motors.largeBC.stop();</field>
+        <field name="LINE35">}</field>
+        <next>
+          <block type="variables_set">
+            <field name="VAR" id="YguEuLX/dPHH9h~jrP.Z" variabletype="">lastArmPos</field>
+            <value name="VALUE">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="variables_set">
+                <field name="VAR" id="027S;r{-HCLMBe{4E2jE" variabletype="">loopStart</field>
+                <value name="VALUE">
+                  <shadow type="math_number">
+                    <field name="NUM">0</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="variables_set">
+                    <field name="VAR" id="]JgdYggW7j2JQ:istdZS" variabletype="">motoraAdjustment</field>
+                    <value name="VALUE">
+                      <shadow type="math_number">
+                        <field name="NUM">0</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="variables_set">
+                        <field name="VAR" id="[G!^V+4skiV(p5iymN1o" variabletype="">currentTime</field>
+                        <value name="VALUE">
+                          <shadow type="math_number">
+                            <field name="NUM">0</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="variables_set">
+                            <field name="VAR" id="@^UFRQqY%G`[(DI/E`70" variabletype="">armPos</field>
+                            <value name="VALUE">
+                              <shadow type="math_number">
+                                <field name="NUM">0</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="841" y="20">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission6 traffic</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission6trafficjam2"></mutation>
+        <field name="NAME">mission6trafficjam2</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="1306" y="20">
+    <field name="NAME">mission12Jonas3</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorPairSteer">
+        <mutation _expanded="2" _input_init="true"></mutation>
+        <field name="chassis">motors.largeBC</field>
+        <field name="unit">MoveUnit.Rotations</field>
+        <value name="turnRatio">
+          <shadow type="motorTurnRatioPicker"></shadow>
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="speed">
+          <shadow type="motorSpeedPicker">
+            <field name="speed">33</field>
+          </shadow>
+        </value>
+        <value name="value">
+          <shadow type="math_number">
+            <field name="NUM">2.6</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="motorPairSteer">
+            <mutation _expanded="2" _input_init="true"></mutation>
+            <field name="chassis">motors.largeBC</field>
+            <field name="unit">MoveUnit.Rotations</field>
+            <value name="turnRatio">
+              <shadow type="motorTurnRatioPicker"></shadow>
+              <block type="math_number">
+                <field name="NUM">0</field>
+              </block>
+            </value>
+            <value name="speed">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">29</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="2083" y="20">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission12</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission12"></mutation>
+        <field name="NAME">mission12</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="2486" y="20">
+    <field name="NAME">mission6trafficjam2</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="typescript_statement" editable="false">
+        <mutation line0="test(60, 10);" numlines="1"></mutation>
+        <field name="LINE0">test(60, 10);</field>
+        <comment pinned="false" h="120" w="160">motors.resetAll() motors.largeBC.ramp(33, 6, MoveUnit.Rotations, 0.5, 0) motors.largeBC.stop()</comment>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="2830" y="20">
+    <field name="NAME">mission6trafficjam</field>
+    <field name="PARAMS"></field>
+    <statement name="STACK">
+      <block type="motorPairSteer">
+        <mutation _expanded="2" _input_init="true"></mutation>
+        <field name="chassis">motors.largeBC</field>
+        <field name="unit">MoveUnit.Rotations</field>
+        <value name="turnRatio">
+          <shadow type="motorTurnRatioPicker"></shadow>
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+        <value name="speed">
+          <shadow type="motorSpeedPicker">
+            <field name="speed">33</field>
+          </shadow>
+        </value>
+        <value name="value">
+          <shadow type="math_number">
+            <field name="NUM">2.6</field>
+          </shadow>
+        </value>
+        <next>
+          <block type="motorPairTank">
+            <mutation _expanded="2" _input_init="true"></mutation>
+            <field name="motors">motors.largeBC</field>
+            <field name="unit">MoveUnit.Rotations</field>
+            <value name="speedLeft">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">-50</field>
+              </shadow>
+            </value>
+            <value name="speedRight">
+              <shadow type="motorSpeedPicker">
+                <field name="speed">50</field>
+              </shadow>
+            </value>
+            <value name="value">
+              <shadow type="math_number">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <next>
+              <block type="motorStopAll">
+                <next>
+                  <block type="device_pause">
+                    <value name="pause">
+                      <shadow type="timePicker">
+                        <field name="ms">1000</field>
+                      </shadow>
+                    </value>
+                    <next>
+                      <block type="motorPairSteer">
+                        <mutation _expanded="2" _input_init="true"></mutation>
+                        <field name="chassis">motors.largeBC</field>
+                        <field name="unit">MoveUnit.Rotations</field>
+                        <value name="turnRatio">
+                          <shadow type="motorTurnRatioPicker"></shadow>
+                          <block type="math_number">
+                            <field name="NUM">0</field>
+                          </block>
+                        </value>
+                        <value name="speed">
+                          <shadow type="motorSpeedPicker">
+                            <field name="speed">39</field>
+                          </shadow>
+                        </value>
+                        <value name="value">
+                          <shadow type="math_number">
+                            <field name="NUM">1</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="20" y="2113">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">Crane Mission</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="crane"></mutation>
+        <field name="NAME">crane</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="459" y="2113">
     <field name="NAME">mission12</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
@@ -67,7 +345,33 @@
       </block>
     </statement>
   </block>
-  <block type="procedures_defnoreturn" x="1608" y="41">
+  <block type="add_menu_item" x="1236" y="2113">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission12 blackcircle</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission12Jonas1"></mutation>
+        <field name="NAME">mission12Jonas1</field>
+      </block>
+    </statement>
+  </block>
+  <block type="add_menu_item" x="1744" y="2113">
+    <value name="label">
+      <shadow type="text">
+        <field name="TEXT">mission12 redcircle</field>
+      </shadow>
+    </value>
+    <statement name="HANDLER">
+      <block type="procedures_callnoreturn">
+        <mutation name="mission12Jonas2"></mutation>
+        <field name="NAME">mission12Jonas2</field>
+      </block>
+    </statement>
+  </block>
+  <block type="procedures_defnoreturn" x="2236" y="2113">
     <field name="NAME">crane</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
@@ -353,33 +657,26 @@
       </block>
     </statement>
   </block>
-  <block type="add_menu_item" x="0" y="145">
+  <block type="add_menu_item" x="3266" y="2113">
     <value name="label">
       <shadow type="text">
-        <field name="TEXT">mission12</field>
+        <field name="TEXT">mission12 tancircle</field>
       </shadow>
     </value>
     <statement name="HANDLER">
       <block type="procedures_callnoreturn">
-        <mutation name="mission12"></mutation>
-        <field name="NAME">mission12</field>
+        <mutation name="mission12Jonas3"></mutation>
+        <field name="NAME">mission12Jonas3</field>
+        <next>
+          <block type="procedures_callnoreturn">
+            <mutation name="mission12Jonas2"></mutation>
+            <field name="NAME">mission12Jonas2</field>
+          </block>
+        </next>
       </block>
     </statement>
   </block>
-  <block type="add_menu_item" x="1" y="349">
-    <value name="label">
-      <shadow type="text">
-        <field name="TEXT">Crane Mission</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="procedures_callnoreturn">
-        <mutation name="crane"></mutation>
-        <field name="NAME">crane</field>
-      </block>
-    </statement>
-  </block>
-  <block type="procedures_defnoreturn" x="798" y="413">
+  <block type="procedures_defnoreturn" x="20" y="3102">
     <field name="NAME">mission12Jonas1</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
@@ -446,33 +743,7 @@
       </block>
     </statement>
   </block>
-  <block type="add_menu_item" x="2" y="585">
-    <value name="label">
-      <shadow type="text">
-        <field name="TEXT">mission12 blackcircle</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="procedures_callnoreturn">
-        <mutation name="mission12Jonas1"></mutation>
-        <field name="NAME">mission12Jonas1</field>
-      </block>
-    </statement>
-  </block>
-  <block type="add_menu_item" x="10" y="797">
-    <value name="label">
-      <shadow type="text">
-        <field name="TEXT">mission12 redcircle</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="procedures_callnoreturn">
-        <mutation name="mission12Jonas2"></mutation>
-        <field name="NAME">mission12Jonas2</field>
-      </block>
-    </statement>
-  </block>
-  <block type="procedures_defnoreturn" x="794" y="821">
+  <block type="procedures_defnoreturn" x="797" y="3102">
     <field name="NAME">mission12Jonas2</field>
     <field name="PARAMS"></field>
     <statement name="STACK">
@@ -545,231 +816,6 @@
                         <value name="value">
                           <shadow type="math_number">
                             <field name="NUM">40</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="add_menu_item" x="17" y="988">
-    <value name="label">
-      <shadow type="text">
-        <field name="TEXT">mission12 tancircle</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="procedures_callnoreturn">
-        <mutation name="mission12Jonas3"></mutation>
-        <field name="NAME">mission12Jonas3</field>
-        <next>
-          <block type="procedures_callnoreturn">
-            <mutation name="mission12Jonas2"></mutation>
-            <field name="NAME">mission12Jonas2</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="add_menu_item" x="10" y="1218">
-    <value name="label">
-      <shadow type="text">
-        <field name="TEXT">mission6 traffic</field>
-      </shadow>
-    </value>
-    <statement name="HANDLER">
-      <block type="procedures_callnoreturn">
-        <mutation name="mission12Jonas3"></mutation>
-        <field name="NAME">mission12Jonas3</field>
-        <next>
-          <block type="procedures_callnoreturn">
-            <mutation name="mission6trafficjam"></mutation>
-            <field name="NAME">mission6trafficjam</field>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="procedures_defnoreturn" x="805" y="1200">
-    <field name="NAME">mission12Jonas3</field>
-    <field name="PARAMS"></field>
-    <statement name="STACK">
-      <block type="motorPairSteer">
-        <mutation _expanded="2" _input_init="true"></mutation>
-        <field name="chassis">motors.largeBC</field>
-        <field name="unit">MoveUnit.Rotations</field>
-        <value name="turnRatio">
-          <shadow type="motorTurnRatioPicker"></shadow>
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="speed">
-          <shadow type="motorSpeedPicker">
-            <field name="speed">33</field>
-          </shadow>
-        </value>
-        <value name="value">
-          <shadow type="math_number">
-            <field name="NUM">2.6</field>
-          </shadow>
-        </value>
-        <next>
-          <block type="motorPairSteer">
-            <mutation _expanded="2" _input_init="true"></mutation>
-            <field name="chassis">motors.largeBC</field>
-            <field name="unit">MoveUnit.Rotations</field>
-            <value name="turnRatio">
-              <shadow type="motorTurnRatioPicker"></shadow>
-              <block type="math_number">
-                <field name="NUM">0</field>
-              </block>
-            </value>
-            <value name="speed">
-              <shadow type="motorSpeedPicker">
-                <field name="speed">29</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-            </value>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="pxt-on-start" x="1812" y="1175">
-    <statement name="HANDLER">
-      <block type="variables_set">
-        <field name="VAR" id="rb*W4NkkuIH5g7!*7yKT" variabletype="">lastArmPos</field>
-        <value name="VALUE">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-        <next>
-          <block type="variables_set">
-            <field name="VAR" id="#qj`c)bh$ggPk*;Hjr.c" variabletype="">loopStart</field>
-            <value name="VALUE">
-              <shadow type="math_number">
-                <field name="NUM">0</field>
-              </shadow>
-            </value>
-            <next>
-              <block type="variables_set">
-                <field name="VAR" id="[%AD_,!tjf?$lyhHlm2v" variabletype="">motoraAdjustment</field>
-                <value name="VALUE">
-                  <shadow type="math_number">
-                    <field name="NUM">0</field>
-                  </shadow>
-                </value>
-                <next>
-                  <block type="variables_set">
-                    <field name="VAR" id="Lez%r3N|=8G*|KZFDoWQ" variabletype="">currentTime</field>
-                    <value name="VALUE">
-                      <shadow type="math_number">
-                        <field name="NUM">0</field>
-                      </shadow>
-                    </value>
-                    <next>
-                      <block type="variables_set">
-                        <field name="VAR" id="+E48AGl@,fSjl#Y0uQZ)" variabletype="">armPos</field>
-                        <value name="VALUE">
-                          <shadow type="math_number">
-                            <field name="NUM">0</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </next>
-                  </block>
-                </next>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-  </block>
-  <block type="procedures_defnoreturn" x="831" y="1499">
-    <field name="NAME">mission6trafficjam</field>
-    <field name="PARAMS"></field>
-    <statement name="STACK">
-      <block type="motorPairSteer">
-        <mutation _expanded="2" _input_init="true"></mutation>
-        <field name="chassis">motors.largeBC</field>
-        <field name="unit">MoveUnit.Rotations</field>
-        <value name="turnRatio">
-          <shadow type="motorTurnRatioPicker"></shadow>
-          <block type="math_number">
-            <field name="NUM">0</field>
-          </block>
-        </value>
-        <value name="speed">
-          <shadow type="motorSpeedPicker">
-            <field name="speed">33</field>
-          </shadow>
-        </value>
-        <value name="value">
-          <shadow type="math_number">
-            <field name="NUM">2.6</field>
-          </shadow>
-        </value>
-        <next>
-          <block type="motorPairTank">
-            <mutation _expanded="2" _input_init="true"></mutation>
-            <field name="motors">motors.largeBC</field>
-            <field name="unit">MoveUnit.Rotations</field>
-            <value name="speedLeft">
-              <shadow type="motorSpeedPicker">
-                <field name="speed">-50</field>
-              </shadow>
-            </value>
-            <value name="speedRight">
-              <shadow type="motorSpeedPicker">
-                <field name="speed">50</field>
-              </shadow>
-            </value>
-            <value name="value">
-              <shadow type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <next>
-              <block type="motorStopAll">
-                <next>
-                  <block type="device_pause">
-                    <value name="pause">
-                      <shadow type="timePicker">
-                        <field name="ms">1000</field>
-                      </shadow>
-                    </value>
-                    <next>
-                      <block type="motorPairSteer">
-                        <mutation _expanded="2" _input_init="true"></mutation>
-                        <field name="chassis">motors.largeBC</field>
-                        <field name="unit">MoveUnit.Rotations</field>
-                        <value name="turnRatio">
-                          <shadow type="motorTurnRatioPicker"></shadow>
-                          <block type="math_number">
-                            <field name="NUM">0</field>
-                          </block>
-                        </value>
-                        <value name="speed">
-                          <shadow type="motorSpeedPicker">
-                            <field name="speed">39</field>
-                          </shadow>
-                        </value>
-                        <value name="value">
-                          <shadow type="math_number">
-                            <field name="NUM">1</field>
                           </shadow>
                         </value>
                       </block>
