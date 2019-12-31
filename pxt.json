@@ -11,7 +11,11 @@
         "main.ts",
         "main.blocks",
         "mission9_safety_factor.ts",
-        "sensor_test.ts"
+        "sensor_test.ts",
+        "mission12_build.ts",
+        "mission6_trafficjam.ts",
+        "mission1_elevated_places.ts",
+        "lightsensor.ts"
     ],
     "testFiles": [
         "test.ts"

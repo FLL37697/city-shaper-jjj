@@ -20,9 +20,9 @@ function sensor_test_1(
     const Ki = .005;
     const CENTER_READING = 50;
     while (true) {
-        if (buttonPressed) {
-            break;
-        }
+        // if (buttonPressed) {
+        //     break;
+        // }
 
         let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
         let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
