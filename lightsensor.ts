@@ -33,7 +33,8 @@ function runtowhite(basePower: number = 10) {
 function linefollow(
     basePower: number = 10,
     stopAngle: number = 0,
-    seconds: number = 0
+    seconds: number = 0,
+    darkThreshold: number = 0
 ) {
     const Kp = -.1;
     const Ki = +.005;
@@ -56,9 +57,18 @@ function linefollow(
         let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         if (seconds == 0 && stopAngle == 0) {
-            if (rightLightValue >= WHITE_THRESHOLD && leftLightValue >= WHITE_THRESHOLD) {
-                break;
+            if (darkThreshold == 0) {
+                if (rightLightValue >= WHITE_THRESHOLD && leftLightValue >= WHITE_THRESHOLD) {
+                    //music.playSoundEffect(sounds.animalsElephantCall);
+                    break;
+                }
+            } else {
+                if (rightLightValue <= darkThreshold && leftLightValue <= darkThreshold) {
+                    //music.playSoundEffect(sounds.animalsElephantCall);
+                    break;
+                }
             }
+
         }
 
         brick.showValue("right 0-100:", rightLightValue, 1)
@@ -86,12 +96,14 @@ function linefollow(
         if (seconds != 0) {
             let now = control.timer1.millis();
             if (now - startTime > seconds * 1000) {
+                //music.playSoundEffect(sounds.animalsInsectBuzz1);
                 break;
             }
         }
 
         if (stopAngle != 0) {
             if (averageAngle >= stopAngle) {
+                //music.playSoundEffect(sounds.animalsSnakeHiss);
                 break;
             }
         }
