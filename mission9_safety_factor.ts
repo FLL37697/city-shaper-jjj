@@ -24,18 +24,18 @@ function test3() {
     // Forward
     motors.largeBC.tank(basePower, basePower, .4, MoveUnit.Rotations);
     // Rotate left
-    motors.largeBC.tank(-basePower, basePower, .27, MoveUnit.Rotations);
+    motors.largeBC.tank(-basePower, basePower, .25, MoveUnit.Rotations);
     // Forward
-    motors.largeBC.tank(basePower, basePower, .35, MoveUnit.Rotations);
+    motors.largeBC.tank(basePower, basePower, .27, MoveUnit.Rotations);
     // Rotate right
-    motors.largeBC.tank(basePower, -basePower, .42, MoveUnit.Rotations);
+    motors.largeBC.tank(basePower, -basePower, .425, MoveUnit.Rotations);
     // Forward
     motors.largeBC.tank(basePower, basePower, .6, MoveUnit.Rotations);
     // Rotate left
-    motors.largeBC.tank(-basePower, basePower, .4, MoveUnit.Rotations);
+    motors.largeBC.tank(-basePower, basePower, .375, MoveUnit.Rotations);
 
     // Return to base
-    motors.largeBC.steer(1, -75, 7, MoveUnit.Rotations);
+    motors.largeBC.steer(5, -75, 7, MoveUnit.Rotations);
 }
 
 

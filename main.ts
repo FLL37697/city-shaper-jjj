@@ -4,12 +4,22 @@ let motoraAdjustment = 0
 let loopStart = 0
 let lastArmPos = 0
 
-radioactiveBrainstorm.addMenuItem("mission1 elevated places", function () {
-    mission1_elevated_places();
-})
+
 
 radioactiveBrainstorm.addMenuItem("mission9 safety factor", function () {
     mission9_safety_factor();
+})
+
+radioactiveBrainstorm.addMenuItem("mission12 build A", function () {
+    mission12_build_a();
+})
+
+radioactiveBrainstorm.addMenuItem("mission12 build B", function () {
+    mission12_build_b();
+})
+
+radioactiveBrainstorm.addMenuItem("mission1 elevated places", function () {
+    mission1_elevated_places();
 })
 
 radioactiveBrainstorm.addMenuItem("Sensor Test", function () {
@@ -20,13 +30,7 @@ radioactiveBrainstorm.addMenuItem("mission6 traffic jam", function () {
     mission6_trafficjam();
 })
 
-radioactiveBrainstorm.addMenuItem("mission12 build A", function () {
-    mission12_build_a();
-})
 
-radioactiveBrainstorm.addMenuItem("mission12 build B", function () {
-    mission12_build_b();
-})
 
 
 radioactiveBrainstorm.addMenuItem("mission6 traffic", function () {

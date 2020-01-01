@@ -1,15 +1,24 @@
 // Add your code here
 
-function myramp(startPower: number = 1, maxPower: number = 10, increment: number = 1, time: number = 4) {
-    let power = startPower;
-    motors.largeBC.tank(power, power)
+function myramp(startPower: number = 1, maxPowerLeft: number = 10, maxPowerRight: number = 10, increment: number = 1, time: number = 4) {
+    let leftPower = startPower;
+    let rightPower = startPower;
+    motors.largeBC.tank(leftPower, rightPower);
 
     let startTime = control.timer1.millis();
 
     while (true) {
-        if (power < maxPower) {
-            power += increment;
-            motors.largeBC.steer(power, power);
+        if (leftPower < maxPowerLeft || rightPower < maxPowerRight) {
+            if (leftPower < maxPowerLeft) {
+                leftPower += increment;
+            }
+
+            if (rightPower < maxPowerRight) {
+                rightPower += increment;
+            }
+            brick.showValue("right:", rightPower, 1)
+            brick.showValue("left:", leftPower, 2)
+            motors.largeBC.tank(leftPower, rightPower);
         }
 
         pause(50);
@@ -21,17 +30,33 @@ function myramp(startPower: number = 1, maxPower: number = 10, increment: number
 }
 
 function mission12_build_a() {
-    myramp(1, 30, 1, 5)
-    pause(50);
-    // motors.largeBC.stop();
-    // motors.largeBC.tank(-15, 15, .1, MoveUnit.Rotations);
+    myramp(1, 30, 20, 2, 6);
+    motors.largeBC.tank(25, 25);
+
+    let leftDetected = false;
+    let rightDetected = false;
+    while (true) {
+        if (sensors.color1.isColorDetected(ColorSensorColor.Red)) {
+            leftDetected = true;
+        }
+
+        if (sensors.color2.isColorDetected(ColorSensorColor.Red)) {
+            rightDetected = true;
+        }
+
+        if (rightDetected || leftDetected) {
+            break;
+        }
+
+        pause(5);
+    }
+
     motors.largeBC.stop();
     motors.largeBC.tank(-32, -30, 3, MoveUnit.Rotations);
-    // motors.largeBC.tank(50, -50, 1.5, MoveUnit.Rotations);
 }
 
 function mission12_build_b() {
-    myramp(1, 30, 1, 4)
+    myramp(1, 30, 30, 1, 4)
     pause(50);
     // motors.largeBC.stop();
     // motors.largeBC.tank(-15, 15, .1, MoveUnit.Rotations);
