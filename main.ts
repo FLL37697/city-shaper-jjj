@@ -4,7 +4,9 @@ let motoraAdjustment = 0
 let loopStart = 0
 let lastArmPos = 0
 
-
+// Try to reset the sensors by detecting color :/
+sensors.color1.isColorDetected(ColorSensorColor.Red);
+sensors.color2.isColorDetected(ColorSensorColor.Red);
 
 radioactiveBrainstorm.addMenuItem("mission9 safety factor", function () {
     mission9_safety_factor();

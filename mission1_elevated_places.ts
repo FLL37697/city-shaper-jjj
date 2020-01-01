@@ -23,7 +23,7 @@ function mission1_aligntoramp() {
     motors.largeBC.stop();
 
     // move forward
-    motors.largeBC.tank(20, 20, 1.25, MoveUnit.Rotations);
+    motors.largeBC.tank(20, 21, 1.2, MoveUnit.Rotations);
 
     // turn to ramp
     motors.largeBC.tank(-20, 20, .45, MoveUnit.Rotations);
@@ -34,9 +34,11 @@ function mission1_aligntoramp() {
     // Approach ramp
     linefollow(10, 0, 0, 15);
 
-    // Use lip of ramp to align
-    motors.largeBC.tank(30, 30, 1.5, MoveUnit.Seconds);
-    motors.largeBC.tank(-10, -10, 1, MoveUnit.Seconds);
+    // // Use lip of ramp to align
+    // motors.largeBC.tank(30, 30, 1.5, MoveUnit.Seconds);
+    // motors.largeBC.tank(-10, -10, 1, MoveUnit.Seconds);
+
+    pause(500);
 }
 
 function mission1_setup() {

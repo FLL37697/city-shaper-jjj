@@ -56,11 +56,28 @@ function mission12_build_a() {
 }
 
 function mission12_build_b() {
-    myramp(1, 30, 30, 1, 4)
-    pause(50);
-    // motors.largeBC.stop();
-    // motors.largeBC.tank(-15, 15, .1, MoveUnit.Rotations);
+    myramp(1, 25, 25, 1, 2)
+    music.playSoundEffect(sounds.animalsCatPurr);
+    motors.largeBC.tank(25, 25);
+    while (true) {
+        if (sensors.color1.isColorDetected(ColorSensorColor.Blue) || sensors.color2.isColorDetected(ColorSensorColor.Blue)) {
+            break;
+        }
+
+        pause(5);
+    }
+    music.playSoundEffect(sounds.animalsElephantCall);
+    while (true) {
+        if (sensors.color1.isColorDetected(ColorSensorColor.Black) || sensors.color2.isColorDetected(ColorSensorColor.Black)) {
+            break;
+        }
+
+        pause(5);
+    }
+    music.playSoundEffect(sounds.animalsCatPurr);
+ 
     motors.largeBC.stop();
-    motors.largeBC.tank(-32, -30, 2.5, MoveUnit.Rotations);
+    pause(200);
+    motors.largeBC.tank(-32, -30, 3.5, MoveUnit.Rotations);
     // motors.largeBC.tank(50, -50, 1.5, MoveUnit.Rotations);
 }
