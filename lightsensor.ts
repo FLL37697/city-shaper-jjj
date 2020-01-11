@@ -8,8 +8,8 @@ function runtowhite(basePower: number = 10) {
     motors.largeBC.tank(powerLeft, powerRight);
 
     while (true) {
-        let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
-        let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
+        let leftLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / LEFT_MAX;
+        let rightLightValue = 100 * sensors.color3.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         if (leftLightValue >= WHITE_THRESHOLD) {
             powerLeft = 0;
@@ -53,8 +53,8 @@ function linefollow(
         let rightAngle = motors.largeC.angle();
         let averageAngle = ((leftAngle - startLeft) + (rightAngle - startRight)) / 2;
 
-        let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
-        let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
+        let leftLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / LEFT_MAX;
+        let rightLightValue = 100 * sensors.color3.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         if (seconds == 0 && stopAngle == 0) {
             if (darkThreshold == 0) {

@@ -66,8 +66,8 @@ function test2(
     motors.largeBC.tank(powerLeft, powerRight);
 
     while (true) {
-        let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
-        let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
+        let leftLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / LEFT_MAX;
+        let rightLightValue = 100 * sensors.color3.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         if (leftLightValue >= WHITE_THRESHOLD) {
             powerLeft = 0;
@@ -93,8 +93,8 @@ function test2(
     motors.largeBC.tank(1.5 * basePower, 1.5 * basePower * .25);
 
     while (true) {
-        let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
-        let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
+        let leftLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / LEFT_MAX;
+        let rightLightValue = 100 * sensors.color3.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         if (rightLightValue >= WHITE_THRESHOLD) {
             break
@@ -113,8 +113,8 @@ function test2(
 
 
     while (true) {
-        let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
-        let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
+        let leftLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / LEFT_MAX;
+        let rightLightValue = 100 * sensors.color3.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         if (rightLightValue >= WHITE_THRESHOLD && leftLightValue >= WHITE_THRESHOLD) {
             break;

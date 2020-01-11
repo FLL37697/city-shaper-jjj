@@ -36,11 +36,11 @@ function mission12_build_a() {
     let leftDetected = false;
     let rightDetected = false;
     while (true) {
-        if (sensors.color1.isColorDetected(ColorSensorColor.Red)) {
+        if (sensors.color2.isColorDetected(ColorSensorColor.Red)) {
             leftDetected = true;
         }
 
-        if (sensors.color2.isColorDetected(ColorSensorColor.Red)) {
+        if (sensors.color3.isColorDetected(ColorSensorColor.Red)) {
             rightDetected = true;
         }
 
@@ -60,7 +60,7 @@ function mission12_build_b() {
     music.playSoundEffect(sounds.animalsCatPurr);
     motors.largeBC.tank(25, 25);
     while (true) {
-        if (sensors.color1.isColorDetected(ColorSensorColor.Blue) || sensors.color2.isColorDetected(ColorSensorColor.Blue)) {
+        if (sensors.color2.isColorDetected(ColorSensorColor.Blue) || sensors.color2.isColorDetected(ColorSensorColor.Blue)) {
             break;
         }
 
@@ -68,7 +68,7 @@ function mission12_build_b() {
     }
     music.playSoundEffect(sounds.animalsElephantCall);
     while (true) {
-        if (sensors.color1.isColorDetected(ColorSensorColor.Black) || sensors.color2.isColorDetected(ColorSensorColor.Black)) {
+        if (sensors.color3.isColorDetected(ColorSensorColor.Black) || sensors.color2.isColorDetected(ColorSensorColor.Black)) {
             break;
         }
 

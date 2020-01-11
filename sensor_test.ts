@@ -6,8 +6,8 @@ function sensor_test_1(
     // sensors.color1.reset();
     // sensors.color2.reset();
 
-    sensors.color1.calibrateLight(LightIntensityMode.Reflected);
     sensors.color2.calibrateLight(LightIntensityMode.Reflected);
+    sensors.color3.calibrateLight(LightIntensityMode.Reflected);
 
     let error = 0;
     let integralLeft = 0;
@@ -24,8 +24,8 @@ function sensor_test_1(
         //     break;
         // }
 
-        let leftLightValue = 100 * sensors.color1.light(LightIntensityMode.Reflected) / LEFT_MAX;
-        let rightLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / RIGHT_MAX;
+        let leftLightValue = 100 * sensors.color2.light(LightIntensityMode.Reflected) / LEFT_MAX;
+        let rightLightValue = 100 * sensors.color3.light(LightIntensityMode.Reflected) / RIGHT_MAX;
 
         brick.showValue("right 0-100", rightLightValue, 1)
         brick.showValue("left 0-100", leftLightValue, 2)

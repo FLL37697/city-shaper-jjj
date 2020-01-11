@@ -5,8 +5,8 @@ let loopStart = 0
 let lastArmPos = 0
 
 // Try to reset the sensors by detecting color :/
-sensors.color1.isColorDetected(ColorSensorColor.Red);
 sensors.color2.isColorDetected(ColorSensorColor.Red);
+sensors.color3.isColorDetected(ColorSensorColor.Red);
 
 radioactiveBrainstorm.addMenuItem("mission9 safety factor", function () {
     mission9_safety_factor();
@@ -122,8 +122,8 @@ function test(
         let B = 70;
         let K = .1;
 
-        let right = sensors.color1.light(LightIntensityMode.Reflected)
-        let left = sensors.color2.light(LightIntensityMode.Reflected)
+        let right = sensors.color2.light(LightIntensityMode.Reflected)
+        let left = sensors.color3.light(LightIntensityMode.Reflected)
 
         brick.showValue("right", right, 1)
         brick.showValue("left", left, 2)
