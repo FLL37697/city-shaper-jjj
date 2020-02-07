@@ -15,7 +15,9 @@
         "mission12_build.ts",
         "mission6_trafficjam.ts",
         "mission1_elevated_places.ts",
-        "lightsensor.ts"
+        "lightsensor.ts",
+        "mission1_elevated_places_fast.ts",
+        "mission11_innarch.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -1,10 +1,5 @@
 // Add your code here
 function mission9_safety_factor() {
-    test3()
-}
-
-
-function test3() {
     motors.largeB.reset();
     motors.largeC.reset();
 
@@ -14,7 +9,8 @@ function test3() {
     motors.largeBC.tank(10, -10, .25, MoveUnit.Rotations);
     runtowhite();
     motors.largeBC.tank(0, 20, .5, MoveUnit.Rotations);
-    linefollow();
+    //linefollow();
+    linefollow_test(10, 0, 0, 0, -.2, .02, .66);
 
     let basePower = 10;
     // Reverse
@@ -26,16 +22,16 @@ function test3() {
     // Rotate left
     motors.largeBC.tank(-basePower, basePower, .25, MoveUnit.Rotations);
     // Forward
-    motors.largeBC.tank(basePower, basePower, .27, MoveUnit.Rotations);
+    motors.largeBC.tank(basePower, basePower, .25, MoveUnit.Rotations);
     // Rotate right
-    motors.largeBC.tank(basePower, -basePower, .425, MoveUnit.Rotations);
+    motors.largeBC.tank(basePower, -basePower, .435, MoveUnit.Rotations);
     // Forward
     motors.largeBC.tank(basePower, basePower, .6, MoveUnit.Rotations);
     // Rotate left
     motors.largeBC.tank(-basePower, basePower, .375, MoveUnit.Rotations);
 
     // Return to base
-    motors.largeBC.steer(5, -75, 7, MoveUnit.Rotations);
+    motors.largeBC.steer(0, -75, 7, MoveUnit.Rotations);
 }
 
 
@@ -83,7 +79,12 @@ function test2(
             break;
         }
 
-        pause(5)
+        pause(5);
+
+        if (exitFlag) {
+            exit();
+            return;
+        };
     }
     motors.largeBC.stop();
 
@@ -100,7 +101,12 @@ function test2(
             break
         }
 
-        pause(5)
+        pause(5);
+
+        if (exitFlag) {
+            exit();
+            return;
+        };
     }
 
     motors.largeBC.steer(0, 10, .2, MoveUnit.Rotations);
@@ -140,7 +146,12 @@ function test2(
 
         motors.largeBC.tank(leftPower, rightPower);
 
-        pause(5)
+        pause(5);
+
+        if (exitFlag) {
+            exit();
+            return;
+        };
     }
 
     motors.largeBC.setBrake(true);
@@ -176,7 +187,7 @@ function test2(
     // pause(500)
 
     // Reverse
-    motors.largeBC.tank(-basePower, -basePower, .5, MoveUnit.Rotations);
+    motors.largeBC.tank(-basePower, -basePower, .46, MoveUnit.Rotations);
     // Rotate right
     motors.largeBC.tank(basePower, -basePower, .38, MoveUnit.Rotations);
     // Forward

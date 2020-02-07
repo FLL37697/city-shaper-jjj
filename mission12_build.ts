@@ -26,11 +26,16 @@ function myramp(startPower: number = 1, maxPowerLeft: number = 10, maxPowerRight
         if (control.timer1.millis() - startTime > 1000 * time) {
             break;
         }
+
+        if (exitFlag) {
+            exit();
+            return;
+        }
     }
 }
 
 function mission12_build_a() {
-    myramp(1, 30, 20, 2, 6);
+    myramp(1, 30, 30, 2, 2.5);
     motors.largeBC.tank(25, 25);
 
     let leftDetected = false;
@@ -49,10 +54,15 @@ function mission12_build_a() {
         }
 
         pause(5);
+
+        if (exitFlag) {
+            exit();
+            return;
+        }
     }
 
     motors.largeBC.stop();
-    motors.largeBC.tank(-32, -30, 3, MoveUnit.Rotations);
+    motors.largeBC.tank(-75, -73, 5, MoveUnit.Rotations);
 }
 
 function mission12_build_b() {
@@ -65,6 +75,11 @@ function mission12_build_b() {
         }
 
         pause(5);
+
+        if (exitFlag) {
+            exitFlag = false;
+            return;
+        }
     }
     music.playSoundEffect(sounds.animalsElephantCall);
     while (true) {
@@ -73,11 +88,17 @@ function mission12_build_b() {
         }
 
         pause(5);
+
+        if (exitFlag) {
+            exit();
+            return;
+        }
     }
     music.playSoundEffect(sounds.animalsCatPurr);
- 
+    pause(250);
     motors.largeBC.stop();
-    pause(200);
-    motors.largeBC.tank(-32, -30, 3.5, MoveUnit.Rotations);
+    //pause(200);
+    motors.largeBC.tank(-75, -75, .25, MoveUnit.Rotations);
+    motors.largeBC.tank(-50, -75, 2, MoveUnit.Rotations);
     // motors.largeBC.tank(50, -50, 1.5, MoveUnit.Rotations);
 }

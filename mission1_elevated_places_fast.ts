@@ -1,30 +1,29 @@
-// Add your code here
-function mission1_elevated_places() {
-    mission1_setup();
 
-    mission1_aligntoramp();
+function mission1_elevated_places_fast() {
+    mission1_setup_fast();
 
-    mission1_prepareforlaunch();
+    mission1_aligntoramp_fast();
 
-    mission1_climbramp();
+    mission1_prepareforlaunch_fast();
+
+    mission1_climbramp_fast();
 }
 
-function mission1_prepareforlaunch() {
+function mission1_prepareforlaunch_fast() {
     motors.largeBC.stop();
     motors.largeBC.reset();
-    motors.largeBC.tank(-10, -10, 1.5, MoveUnit.Rotations);
+    motors.largeBC.tank(-20, -20, 1.5, MoveUnit.Rotations);
 }
 
-function mission1_aligntoramp() {
+function mission1_aligntoramp_fast() {
     // Approach line
     motors.largeBC.tank(30, 30, 1.5, MoveUnit.Rotations);
 
-    //linefollow(10, 160);
-    linefollow_test(10, 160, 0, 0, -.2, .02, .66);
+    linefollow_fast(10, 160);
     motors.largeBC.stop();
 
     // move forward
-    motors.largeBC.tank(20, 21, 1.2, MoveUnit.Rotations);
+    motors.largeBC.tank(30, 31, 1.2, MoveUnit.Rotations);
 
     // turn to ramp
     motors.largeBC.tank(-20, 20, .45, MoveUnit.Rotations);
@@ -33,8 +32,7 @@ function mission1_aligntoramp() {
     motors.largeBC.tank(10, 10, .5, MoveUnit.Seconds);
 
     // Approach ramp
-    //linefollow(10, 0, 0, 15);
-    linefollow_test(10, 0, 0, 15, -.2, .02, .66);
+    linefollow_fast(10, 0, 0, 15);
 
     // // Use lip of ramp to align
     // motors.largeBC.tank(30, 30, 1.5, MoveUnit.Seconds);
@@ -43,12 +41,12 @@ function mission1_aligntoramp() {
     pause(500);
 }
 
-function mission1_setup() {
+function mission1_setup_fast() {
     motors.largeBC.reset();
 }
 
-function mission1_climbramp() {
+function mission1_climbramp_fast() {
     motors.largeBC.tank(100, 100, 2, MoveUnit.Rotations);
     motors.largeBC.stop();
-    motors.largeBC.tank(23, 20, 3, MoveUnit.Rotations);
+    motors.largeBC.tank(23, 20, 2.35, MoveUnit.Rotations);
 }

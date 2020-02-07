@@ -3,61 +3,71 @@ let currentTime = 0
 let motoraAdjustment = 0
 let loopStart = 0
 let lastArmPos = 0
+let exitFlag = false;
 
-// Try to reset the sensors by detecting color :/
-sensors.color2.isColorDetected(ColorSensorColor.Red);
-sensors.color3.isColorDetected(ColorSensorColor.Red);
+function exit() {
+    motors.largeBC.stop();
+    exitFlag = false;
+}
 
+brick.buttonLeft.onEvent(ButtonEvent.Pressed, function () {
+    exitFlag = true;
+});
+
+function line_follow_test() {
+    linefollow_test(10, 0, 0, 0, -.2, .02, .66);
+}
+
+function resetAll() {
+    exitFlag = false;
+}
+// radioactiveBrainstorm.addMenuItem("line follow test", function () {
+//     resetAll();
+//     line_follow_test();
+// })
 radioactiveBrainstorm.addMenuItem("mission9 safety factor", function () {
+    resetAll();
     mission9_safety_factor();
 })
 
+// radioactiveBrainstorm.addMenuItem("mission1 elevated places fast", function () {
+//     resetAll();
+//     mission1_elevated_places_fast();
+// })
+
 radioactiveBrainstorm.addMenuItem("mission12 build A", function () {
+    resetAll();
     mission12_build_a();
 })
-
 radioactiveBrainstorm.addMenuItem("mission12 build B", function () {
+    resetAll();
     mission12_build_b();
+})
+radioactiveBrainstorm.addMenuItem("mission11 innarch", function () {
+    resetAll();
+    mission11();
 })
 
 radioactiveBrainstorm.addMenuItem("mission1 elevated places", function () {
+    resetAll();
     mission1_elevated_places();
 })
-
-radioactiveBrainstorm.addMenuItem("Sensor Test", function () {
-    sensor_test_1();
-})
-
-radioactiveBrainstorm.addMenuItem("mission6 traffic jam", function () {
-    mission6_trafficjam();
-})
-
-
-
-
-radioactiveBrainstorm.addMenuItem("mission6 traffic", function () {
-    mission6trafficjam2()
-})
-function mission12Jonas3() {
-    motors.largeBC.steer(0, 33, 2.6, MoveUnit.Rotations)
-    motors.largeBC.steer(0, 29, 0, MoveUnit.Rotations)
-}
-
-function mission6trafficjam2() {
-    // motors.resetAll() motors.largeBC.ramp(33, 6,
-    // MoveUnit.Rotations, 0.5, 0) motors.largeBC.stop()
-    test(60, 10);
-}
-function mission6trafficjam() {
-    motors.largeBC.steer(0, 33, 2.6, MoveUnit.Rotations)
-    motors.largeBC.tank(-50, 50, 1, MoveUnit.Rotations)
-    motors.stopAll()
-    pause(1000)
-    motors.largeBC.steer(0, 39, 1, MoveUnit.Rotations)
-}
-radioactiveBrainstorm.addMenuItem("Crane Mission", function () {
-    crane()
-})
+// radioactiveBrainstorm.addMenuItem("Sensor Test", function () {
+//     resetAll();
+//     sensor_test_1();
+// })
+// radioactiveBrainstorm.addMenuItem("mission6 traffic jam", function () {
+//     resetAll();
+//     mission6_trafficjam();
+// })
+// radioactiveBrainstorm.addMenuItem("mission6 traffic", function () {
+//     resetAll();
+//     mission6trafficjam2()
+// })
+// radioactiveBrainstorm.addMenuItem("Crane Mission", function () {
+//     resetAll();
+//     crane()
+// })
 function mission12() {
     motors.resetAll()
     motors.largeBC.steer(0, 25, 3, MoveUnit.Rotations)
@@ -65,12 +75,6 @@ function mission12() {
     motors.largeBC.steer(0, -25, 3, MoveUnit.Rotations)
     motors.stopAll()
 }
-radioactiveBrainstorm.addMenuItem("mission12 blackcircle", function () {
-    mission12Jonas1()
-})
-radioactiveBrainstorm.addMenuItem("mission12 redcircle", function () {
-    mission12Jonas2()
-})
 function crane() {
     motors.resetAll()
     radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.UP, 30, 40, 100, false)
@@ -91,10 +95,6 @@ function crane() {
     radioactiveBrainstorm.moveUntilStall(motors.mediumA, radioactiveBrainstorm.Direction.DOWN, 20, 10, 100, true)
     motors.largeBC.steer(0, -50, 2, MoveUnit.Rotations)
 }
-radioactiveBrainstorm.addMenuItem("mission12 tancircle", function () {
-    mission12Jonas3()
-    mission12Jonas2()
-})
 function mission12Jonas1() {
     motors.resetAll()
     motors.largeBC.steer(0, 33, 2, MoveUnit.Rotations)
@@ -109,6 +109,35 @@ function mission12Jonas2() {
     pause(1000)
     motors.largeBC.steer(0, -39, 40, MoveUnit.Rotations)
 }
+function mission12Jonas3() {
+    motors.largeBC.steer(0, 33, 2.6, MoveUnit.Rotations)
+    motors.largeBC.steer(0, 29, 0, MoveUnit.Rotations)
+}
+// radioactiveBrainstorm.addMenuItem("mission12 blackcircle", function () {
+//     mission12Jonas1()
+// })
+// radioactiveBrainstorm.addMenuItem("mission12 redcircle", function () {
+//     mission12Jonas2()
+// })
+function mission6trafficjam2() {
+    // motors.resetAll() motors.largeBC.ramp(33, 6,
+    // MoveUnit.Rotations, 0.5, 0) motors.largeBC.stop()
+    test(60, 10);
+}
+// radioactiveBrainstorm.addMenuItem("mission12 tancircle", function () {
+//     mission12Jonas3()
+//     mission12Jonas2()
+// })
+function mission6trafficjam() {
+    motors.largeBC.steer(0, 33, 2.6, MoveUnit.Rotations)
+    motors.largeBC.tank(-50, 50, 1, MoveUnit.Rotations)
+    motors.stopAll()
+    pause(1000)
+    motors.largeBC.steer(0, 39, 1, MoveUnit.Rotations)
+}
+// Try to reset the sensors by detecting color :/
+sensors.color2.isColorDetected(ColorSensorColor.Red);
+sensors.color3.isColorDetected(ColorSensorColor.Red);
 function test(
     seconds: number = 10,
     basePower: number = 10
